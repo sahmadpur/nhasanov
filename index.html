@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novruz Hasanov — Senior Data Analyst</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-light: #818cf8;
+      --accent: #a855f7;
+      --dark: #1e1b4b;
+      --text: #374151;
+      --text-muted: #6b7280;
+      --bg-alt: #f8f7ff;
+      --gradient: linear-gradient(135deg, #4f46e5 0%, #a855f7 100%);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    #mainNav {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 20px rgba(79,70,229,0.08);
+      transition: all 0.3s ease;
+    }
+
+    #mainNav .navbar-brand {
+      font-weight: 800;
+      font-size: 1.2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    #mainNav .nav-link {
+      font-weight: 500;
+      color: var(--dark);
+      padding: 0.5rem 1rem;
+      transition: color 0.2s;
+    }
+
+    #mainNav .nav-link:hover { color: var(--primary); }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #home::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(168,85,247,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--gradient);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--dark);
+    }
+
+    .hero-title span {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    .btn-primary-custom {
+      background: var(--gradient);
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-primary-custom:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    .btn-outline-custom {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    .btn-outline-custom:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Hero photo */
+    .hero-photo-wrap {
+      position: relative;
+    }
+
+    .hero-photo-bg {
+      width: 420px;
+      height: 480px;
+      background: var(--gradient);
+      border-radius: 40px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .hero-photo-bg .avatar-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .avatar-placeholder i {
+      font-size: 280px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1;
+    }
+
+    .dots-pattern {
+      position: absolute;
+      display: grid;
+      grid-template-columns: repeat(5, 10px);
+      gap: 8px;
+    }
+
+    .dots-pattern.top-right { top: -20px; right: -30px; }
+    .dots-pattern.bottom-left { bottom: 20px; left: -40px; }
+
+    .dot {
+      width: 6px; height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+
+    /* ── SECTION TITLES ── */
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-line {
+      width: 50px;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg-alt); padding: 100px 0; }
+
+    .about-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 30px rgba(79,70,229,0.08);
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--bg-alt);
+      color: var(--primary);
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      margin-right: 0.5rem;
+    }
+
+    .social-icon:hover {
+      background: var(--gradient);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .info-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-alt);
+      border-radius: 50px;
+      padding: 0.4rem 1rem;
+      font-size: 0.88rem;
+      color: var(--dark);
+      margin: 0.25rem;
+    }
+
+    .info-pill i { color: var(--primary); }
+
+    /* ── EXPERIENCE ── */
+    #experience { padding: 100px 0; background: #fff; }
+
+    .timeline { position: relative; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+      opacity: 0.2;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 60px;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 12px;
+      top: 6px;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--gradient);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    .timeline-card {
+      background: var(--bg-alt);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(79,70,229,0.12);
+    }
+
+    .timeline-card .company {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--dark);
+    }
+
+    .timeline-card .role {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+
+    .timeline-card .period {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .timeline-card .location-badge {
+      display: inline-block;
+      background: rgba(79,70,229,0.08);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+    }
+
+    .timeline-card ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.2rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* ── EDUCATION ── */
+    #education { background: var(--bg-alt); padding: 100px 0; }
+
+    .edu-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(79,70,229,0.07);
+      height: 100%;
+      transition: transform 0.2s;
+    }
+
+    .edu-card:hover { transform: translateY(-4px); }
+
+    .edu-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: var(--gradient);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    /* ── SKILLS ── */
+    #skills { padding: 100px 0; background: #fff; }
+
+    .skill-group-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      background: var(--bg-alt);
+      color: var(--dark);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.4rem 0.9rem;
+      border-radius: 50px;
+      margin: 0.25rem;
+      border: 1px solid rgba(79,70,229,0.12);
+      transition: all 0.2s;
+    }
+
+    .skill-tag:hover {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .lang-bar-wrap { margin-bottom: 1rem; }
+
+    .lang-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: var(--dark);
+    }
+
+    .lang-bar {
+      height: 6px;
+      border-radius: 3px;
+      background: #e9ecef;
+      overflow: hidden;
+    }
+
+    .lang-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: var(--gradient);
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--dark); padding: 100px 0; }
+
+    #contact .section-title { color: #fff; }
+    #contact .section-subtitle { color: rgba(255,255,255,0.6); }
+    #contact .section-line { opacity: 0.6; }
+
+    .contact-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: block;
+    }
+
+    .contact-card:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-4px);
+    }
+
+    .contact-icon {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--gradient);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; color: #fff;
+      margin: 0 auto 1rem;
+    }
+
+    .contact-card .label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--primary-light);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-card .value {
+      color: #fff;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #13104a;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    /* ── UTILITIES ── */
+    @media (max-width: 768px) {
+      .hero-photo-bg { width: 280px; height: 320px; margin-top: 3rem; }
+      .dots-pattern { display: none; }
+      .timeline::before { left: 10px; }
+      .timeline-item { padding-left: 40px; }
+      .timeline-dot { left: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">N. Hasanov</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section id="home">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-lg-6">
+          <div class="hero-badge">Data · Analytics · Strategy</div>
+          <h1 class="hero-title">
+            Hi, I'm <span>Novruz</span><br>
+            Senior Data<br>Analyst
+          </h1>
+          <p class="hero-subtitle mt-3">
+            Turning complex data into actionable business intelligence.
+            Currently driving ecosystem analytics at Pasha Holding — Baku, Azerbaijan.
+          </p>
+          <div class="mt-4 d-flex flex-wrap gap-3">
+            <a href="#experience" class="btn-primary-custom">View Experience</a>
+            <a href="#contact" class="btn-outline-custom">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6 text-center">
+          <div class="hero-photo-wrap">
+            <!-- Dot decorations -->
+            <div class="dots-pattern top-right">
+              <div class="dot" style="opacity:.6"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+              <div class="dot"></div><div class="dot" style="opacity:.6"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+              <div class="dot"></div><div class="dot"></div><div class="dot" style="opacity:.6"></div><div class="dot"></div><div class="dot"></div>
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot" style="opacity:.6"></div><div class="dot"></div>
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot" style="opacity:.6"></div>
+            </div>
+
+            <div class="hero-photo-bg">
+              <div class="avatar-placeholder">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+
+            <div class="dots-pattern bottom-left">
+              <div class="dot" style="opacity:.6"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+              <div class="dot"></div><div class="dot" style="opacity:.6"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+              <div class="dot"></div><div class="dot"></div><div class="dot" style="opacity:.6"></div><div class="dot"></div><div class="dot"></div>
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot" style="opacity:.6"></div><div class="dot"></div>
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot" style="opacity:.6"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ ABOUT ══════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-line mx-auto"></div>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Business analyst turned data scientist with 10+ years of experience</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="about-card">
+            <div class="row align-items-center g-4">
+              <div class="col-md-8">
+                <p class="lead mb-3" style="color: var(--dark); font-weight:500;">
+                  I'm a Senior Data Analyst and Business Intelligence expert passionate about transforming raw data into strategic insights that drive real business outcomes.
+                </p>
+                <p style="color: var(--text-muted); line-height: 1.8;">
+                  With over a decade of experience across telecom, logistics, retail, and conglomerates, I specialize in data engineering, predictive modelling, executive dashboarding, and cross-functional stakeholder collaboration. I hold an MBA from ADA University / Maastricht School of Management and a BA in Business Administration from ADA University, Baku.
+                </p>
+                <p style="color: var(--text-muted); line-height: 1.8;">
+                  Outside of work, I'm passionate about oratory, partisan marketing, and CSR initiatives, and I was a proud member of the national dance troupe "Azeri Incileri" (2008–2010).
+                </p>
+                <div class="mt-3">
+                  <a href="https://linkedin.com/in/novruzhasanov" target="_blank" class="social-icon" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="mailto:nhasanov2016@ada.edu.az" class="social-icon" title="Email">
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="d-flex flex-wrap justify-content-center">
+                  <span class="info-pill"><i class="fas fa-map-marker-alt"></i> Baku, Azerbaijan</span>
+                  <span class="info-pill"><i class="fas fa-briefcase"></i> Pasha Holding</span>
+                  <span class="info-pill"><i class="fas fa-graduation-cap"></i> MBA, ADA University</span>
+                  <span class="info-pill"><i class="fas fa-globe"></i> 4 Languages</span>
+                  <span class="info-pill"><i class="fas fa-chart-line"></i> 10+ Years Exp.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ EXPERIENCE ══════════ -->
+  <section id="experience">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-line mx-auto"></div>
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">A decade of delivering data-driven value across industries</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="timeline">
+
+            <!-- Pasha Holding -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+                  <div>
+                    <div class="company">Pasha Holding LLC</div>
+                    <div class="role">Ecosystem Analytics / Senior Data Analyst</div>
+                  </div>
+                  <div class="text-end">
+                    <div class="period">Apr 2025 – Present</div>
+                    <span class="location-badge">Baku, AZ</span>
+                  </div>
+                </div>
+                <ul>
+                  <li>Strategic performance evaluation of business verticals across the ecosystem</li>
+                  <li>Facilitated Executive Committee board meetings with in-depth analysis and reporting</li>
+                  <li>Operational efficiency optimisation and new product feasibility analysis</li>
+                  <li>Established data lineage for strategic assets and explored new market potentials</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Eurodesign CSC -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+                  <div>
+                    <div class="company">Eurodesign CSC</div>
+                    <div class="role">Senior Business Analyst → Business Analyst</div>
+                  </div>
+                  <div class="text-end">
+                    <div class="period">Dec 2022 – Apr 2025</div>
+                    <span class="location-badge">Baku, AZ</span>
+                  </div>
+                </div>
+                <ul>
+                  <li>Evaluated business processes and defined project requirements through stakeholder elicitation</li>
+                  <li>Documented and presented current and expected business processes</li>
+                  <li>Monitored quality delivery and timely execution of projects</li>
+                  <li>Oversaw implementation of emerging technologies for customers</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Bolt Food -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+                  <div>
+                    <div class="company">Bolt Food</div>
+                    <div class="role">Courier Operations Manager</div>
+                  </div>
+                  <div class="text-end">
+                    <div class="period">Mar 2022 – Dec 2022</div>
+                    <span class="location-badge">Baku, AZ</span>
+                  </div>
+                </div>
+                <ul>
+                  <li>Data-driven decision-making for courier operations and demand planning</li>
+                  <li>Managed courier base enrollment funnel — retention and churn reduction</li>
+                  <li>Scaled delivery strategy and optimised supply density</li>
+                  <li>Defined and tracked courier operations KPIs</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Azercell BI Expert -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+                  <div>
+                    <div class="company">Azercell Telecom LLC</div>
+                    <div class="role">Business Intelligence Expert</div>
+                  </div>
+                  <div class="text-end">
+                    <div class="period">Aug 2021 – Mar 2022</div>
+                    <span class="location-badge">Baku, AZ</span>
+                  </div>
+                </div>
+                <ul>
+                  <li>KNN-based subscriber clustering and postpaid base performance tracking</li>
+                  <li>AI integration for Executive Dashboards and corporate sales process automation</li>
+                  <li>Geo-perspective Point-of-Sale analysis and ETL process design</li>
+                  <li>Chatbot data flow support and high-level performance handouts (Markdown)</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Azercell Data Science Expert -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+                  <div>
+                    <div class="company">Azercell Telecom LLC</div>
+                    <div class="role">Data Science Expert</div>
+                  </div>
+                  <div class="text-end">
+                    <div class="period">Feb 2020 – Aug 2021</div>
+                    <span class="location-badge">Baku, AZ</span>
+                  </div>
+                </div>
+                <ul>
+                  <li>Implemented supervised/unsupervised ML techniques for market analysis</li>
+                  <li>Deep learning methodologies — image and sound processing</li>
+                  <li>Churn prevention modelling and multi-SIM capture strategies</li>
+                  <li>Short/long-run product feasibility analysis</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Azercell BI Senior Specialist -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+                  <div>
+                    <div class="company">Azercell Telecom LLC</div>
+                    <div class="role">Business Intelligence Senior Specialist</div>
+                  </div>
+                  <div class="text-end">
+                    <div class="period">Dec 2017 – Feb 2020</div>
+                    <span class="location-badge">Baku, AZ</span>
+                  </div>
+                </div>
+                <ul>
+                  <li>Salesmen KPI evaluation and target assessment</li>
+                  <li>Historical NPS calculation and executive dashboard conduction</li>
+                  <li>Geo-perspective PoS analysis and ETL process design</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Azerfon Commercial Analyst -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+                  <div>
+                    <div class="company">Azerfon LLC</div>
+                    <div class="role">Commercial Analyst → Junior Sales Performance Analyst</div>
+                  </div>
+                  <div class="text-end">
+                    <div class="period">May 2014 – Nov 2017</div>
+                    <span class="location-badge">Baku, AZ</span>
+                  </div>
+                </div>
+                <ul>
+                  <li>Subscriber base control, cluster analysis, and sales data analytics</li>
+                  <li>Corporate Sales Channel Performance and Churn Analyses</li>
+                  <li>Employee/agent KPI and dealer bonus calculations</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ EDUCATION ══════════ -->
+  <section id="education">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-line mx-auto"></div>
+        <h2 class="section-title">Education</h2>
+        <p class="section-subtitle">Academic foundation in business, strategy, and analytics</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-md-5">
+          <div class="edu-card">
+            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--primary);">Master of Arts</div>
+            <h4 style="color:var(--dark); font-weight:700; margin:.4rem 0 .2rem;">Business Administration</h4>
+            <div style="color:var(--text-muted); font-size:.9rem; font-weight:500;">ADA University / Maastricht School of Management</div>
+            <div style="color:var(--text-muted); font-size:.85rem; margin-top:.5rem;">Sep 2018 – May 2020 · Baku, Azerbaijan</div>
+            <hr style="border-color:rgba(79,70,229,.1); margin:1rem 0;">
+            <p style="font-size:.85rem; color:var(--text-muted); margin:0;">
+              <strong style="color:var(--dark);">Key courses:</strong> Advanced Business Intelligence &amp; Analytics, Decision Making Tools, Global Corporate Strategy, Digital Marketing, Product &amp; Portfolio Management
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="edu-card">
+            <div class="edu-icon"><i class="fas fa-university"></i></div>
+            <div style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--primary);">Bachelor of Arts</div>
+            <h4 style="color:var(--dark); font-weight:700; margin:.4rem 0 .2rem;">Business Administration</h4>
+            <div style="color:var(--text-muted); font-size:.9rem; font-weight:500;">ADA University</div>
+            <div style="color:var(--text-muted); font-size:.85rem; margin-top:.5rem;">Sep 2012 – May 2016 · Baku, Azerbaijan</div>
+            <hr style="border-color:rgba(79,70,229,.1); margin:1rem 0;">
+            <p style="font-size:.85rem; color:var(--text-muted); margin:0;">
+              <strong style="color:var(--dark);">Key courses:</strong> Business Intelligence &amp; Analytics, Business Statistics, Managerial Economics, Corporate Finance, Principles of Marketing
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SKILLS ══════════ -->
+  <section id="skills">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-line mx-auto"></div>
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">Technical expertise and language proficiency</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-lg-8">
+          <div class="row g-4">
+
+            <div class="col-md-6">
+              <div class="skill-group-title">Analytics &amp; BI</div>
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">SAP Business Objects</span>
+              <span class="skill-tag">R Studio</span>
+              <span class="skill-tag">R Shiny</span>
+              <span class="skill-tag">R Markdown</span>
+              <span class="skill-tag">SAS Enterprise Guide</span>
+              <span class="skill-tag">SAS Viya</span>
+              <span class="skill-tag">Stata</span>
+            </div>
+
+            <div class="col-md-6">
+              <div class="skill-group-title">Data Engineering &amp; ML</div>
+              <span class="skill-tag">Oracle SQL</span>
+              <span class="skill-tag">Impala SQL</span>
+              <span class="skill-tag">ETL Design</span>
+              <span class="skill-tag">KNN Clustering</span>
+              <span class="skill-tag">Deep Learning</span>
+              <span class="skill-tag">Churn Modelling</span>
+              <span class="skill-tag">Image Processing</span>
+              <span class="skill-tag">NLP / Chatbot</span>
+            </div>
+
+            <div class="col-md-6">
+              <div class="skill-group-title">Productivity &amp; Automation</div>
+              <span class="skill-tag">Excel / DAX</span>
+              <span class="skill-tag">PowerPivot</span>
+              <span class="skill-tag">VBA / Macros</span>
+              <span class="skill-tag">ECM</span>
+              <span class="skill-tag">PowerPoint</span>
+              <span class="skill-tag">Prezi</span>
+              <span class="skill-tag">Access</span>
+            </div>
+
+            <div class="col-md-6">
+              <div class="skill-group-title">Languages</div>
+
+              <div class="lang-bar-wrap">
+                <div class="lang-label"><span>Azerbaijani</span><span style="color:var(--primary)">Native</span></div>
+                <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+              </div>
+              <div class="lang-bar-wrap">
+                <div class="lang-label"><span>Russian</span><span style="color:var(--primary)">Fluent</span></div>
+                <div class="lang-bar"><div class="lang-bar-fill" style="width:90%"></div></div>
+              </div>
+              <div class="lang-bar-wrap">
+                <div class="lang-label"><span>English</span><span style="color:var(--primary)">Fluent</span></div>
+                <div class="lang-bar"><div class="lang-bar-fill" style="width:88%"></div></div>
+              </div>
+              <div class="lang-bar-wrap">
+                <div class="lang-label"><span>Turkish</span><span style="color:var(--primary)">Limited</span></div>
+                <div class="lang-bar"><div class="lang-bar-fill" style="width:40%"></div></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACT ══════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-line mx-auto"></div>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Feel free to reach out for opportunities or collaborations</p>
+      </div>
+
+      <div class="row g-3 justify-content-center">
+
+        <div class="col-md-3 col-sm-6">
+          <a href="mailto:nhasanov2016@ada.edu.az" class="contact-card">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="label">Email</div>
+            <div class="value">nhasanov2016@ada.edu.az</div>
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <a href="tel:+994502310856" class="contact-card">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="label">Phone</div>
+            <div class="value">(+99450) 231 08 56</div>
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <a href="https://linkedin.com/in/novruzhasanov" target="_blank" class="contact-card">
+            <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="label">LinkedIn</div>
+            <div class="value">in/novruzhasanov</div>
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <a href="#" class="contact-card">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="label">Location</div>
+            <div class="value">Baku, Azerbaijan</div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer>
+    <p class="mb-0">&copy; 2025 Novruz H. Hasanov · Baku, Azerbaijan</p>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Close mobile nav on link click
+    document.querySelectorAll('#navMenu .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const collapse = bootstrap.Collapse.getInstance(document.getElementById('navMenu'));
+        if (collapse) collapse.hide();
+      });
+    });
+
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('#mainNav .nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 100) current = sec.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+        if (link.classList.contains('active')) {
+          link.style.color = 'var(--primary)';
+        } else {
+          link.style.color = '';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
