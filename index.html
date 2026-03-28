@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +12,8 @@
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
   <style>
     :root {
@@ -25,9 +27,13 @@
       --gradient: linear-gradient(135deg, #2d2d2d 0%, #555555 100%);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -37,9 +43,9 @@
 
     /* ── NAVBAR ── */
     #mainNav {
-      background: rgba(255,255,255,0.95);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
-      box-shadow: 0 1px 20px rgba(45,45,45,0.08);
+      box-shadow: 0 1px 20px rgba(45, 45, 45, 0.08);
       transition: all 0.3s ease;
     }
 
@@ -59,7 +65,9 @@
       transition: color 0.2s;
     }
 
-    #mainNav .nav-link:hover { color: var(--primary); }
+    #mainNav .nav-link:hover {
+      color: var(--primary);
+    }
 
     /* ── HERO ── */
     #home {
@@ -75,9 +83,11 @@
     #home::before {
       content: '';
       position: absolute;
-      top: -200px; right: -200px;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(45,45,45,0.06) 0%, transparent 70%);
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(45, 45, 45, 0.06) 0%, transparent 70%);
       border-radius: 50%;
     }
 
@@ -179,11 +189,19 @@
       gap: 8px;
     }
 
-    .dots-pattern.top-right { top: -20px; right: -30px; }
-    .dots-pattern.bottom-left { bottom: 20px; left: -40px; }
+    .dots-pattern.top-right {
+      top: -20px;
+      right: -30px;
+    }
+
+    .dots-pattern.bottom-left {
+      bottom: 20px;
+      left: -40px;
+    }
 
     .dot {
-      width: 6px; height: 6px;
+      width: 6px;
+      height: 6px;
       background: var(--primary);
       border-radius: 50%;
       opacity: 0.4;
@@ -212,20 +230,24 @@
     }
 
     /* ── ABOUT ── */
-    #about { background: var(--bg-alt); padding: 100px 0; }
+    #about {
+      background: var(--bg-alt);
+      padding: 100px 0;
+    }
 
     .about-card {
       background: #fff;
       border-radius: 20px;
       padding: 2.5rem;
-      box-shadow: 0 4px 30px rgba(45,45,45,0.08);
+      box-shadow: 0 4px 30px rgba(45, 45, 45, 0.08);
     }
 
     .social-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 44px; height: 44px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: var(--bg-alt);
       color: var(--primary);
@@ -253,18 +275,26 @@
       margin: 0.25rem;
     }
 
-    .info-pill i { color: var(--primary); }
+    .info-pill i {
+      color: var(--primary);
+    }
 
     /* ── EXPERIENCE ── */
-    #experience { padding: 100px 0; background: #fff; }
+    #experience {
+      padding: 100px 0;
+      background: #fff;
+    }
 
-    .timeline { position: relative; }
+    .timeline {
+      position: relative;
+    }
 
     .timeline::before {
       content: '';
       position: absolute;
       left: 20px;
-      top: 0; bottom: 0;
+      top: 0;
+      bottom: 0;
       width: 2px;
       background: linear-gradient(to bottom, var(--primary), var(--accent));
       opacity: 0.2;
@@ -280,7 +310,8 @@
       position: absolute;
       left: 12px;
       top: 6px;
-      width: 16px; height: 16px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
       background: var(--gradient);
       border: 3px solid #fff;
@@ -296,7 +327,7 @@
 
     .timeline-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(45,45,45,0.12);
+      box-shadow: 0 8px 30px rgba(45, 45, 45, 0.12);
     }
 
     .timeline-card .company {
@@ -319,7 +350,7 @@
 
     .timeline-card .location-badge {
       display: inline-block;
-      background: rgba(45,45,45,0.08);
+      background: rgba(45, 45, 45, 0.08);
       color: var(--primary);
       font-size: 0.78rem;
       font-weight: 600;
@@ -336,30 +367,42 @@
     }
 
     /* ── EDUCATION ── */
-    #education { background: var(--bg-alt); padding: 100px 0; }
+    #education {
+      background: var(--bg-alt);
+      padding: 100px 0;
+    }
 
     .edu-card {
       background: #fff;
       border-radius: 20px;
       padding: 2rem;
-      box-shadow: 0 4px 20px rgba(45,45,45,0.07);
+      box-shadow: 0 4px 20px rgba(45, 45, 45, 0.07);
       height: 100%;
       transition: transform 0.2s;
     }
 
-    .edu-card:hover { transform: translateY(-4px); }
+    .edu-card:hover {
+      transform: translateY(-4px);
+    }
 
     .edu-icon {
-      width: 56px; height: 56px;
+      width: 56px;
+      height: 56px;
       border-radius: 14px;
       background: var(--gradient);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #fff;
       margin-bottom: 1rem;
     }
 
     /* ── SKILLS ── */
-    #skills { padding: 100px 0; background: #fff; }
+    #skills {
+      padding: 100px 0;
+      background: #fff;
+    }
 
     .skill-group-title {
       font-size: 0.8rem;
@@ -379,7 +422,7 @@
       padding: 0.4rem 0.9rem;
       border-radius: 50px;
       margin: 0.25rem;
-      border: 1px solid rgba(45,45,45,0.12);
+      border: 1px solid rgba(45, 45, 45, 0.12);
       transition: all 0.2s;
     }
 
@@ -389,7 +432,9 @@
       border-color: transparent;
     }
 
-    .lang-bar-wrap { margin-bottom: 1rem; }
+    .lang-bar-wrap {
+      margin-bottom: 1rem;
+    }
 
     .lang-label {
       display: flex;
@@ -414,15 +459,26 @@
     }
 
     /* ── CONTACT ── */
-    #contact { background: var(--dark); padding: 100px 0; }
+    #contact {
+      background: var(--dark);
+      padding: 100px 0;
+    }
 
-    #contact .section-title { color: #fff; }
-    #contact .section-subtitle { color: rgba(255,255,255,0.6); }
-    #contact .section-line { opacity: 0.6; }
+    #contact .section-title {
+      color: #fff;
+    }
+
+    #contact .section-subtitle {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    #contact .section-line {
+      opacity: 0.6;
+    }
 
     .contact-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 20px;
       padding: 2rem;
       text-align: center;
@@ -432,16 +488,20 @@
     }
 
     .contact-card:hover {
-      background: rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.12);
       transform: translateY(-4px);
     }
 
     .contact-icon {
-      width: 60px; height: 60px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       background: var(--gradient);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #fff;
       margin: 0 auto 1rem;
     }
 
@@ -463,7 +523,7 @@
     /* ── FOOTER ── */
     footer {
       background: #13104a;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255, 255, 255, 0.4);
       text-align: center;
       padding: 1.5rem;
       font-size: 0.85rem;
@@ -471,20 +531,37 @@
 
     /* ── UTILITIES ── */
     @media (max-width: 768px) {
-      .hero-photo-bg { width: 280px; height: 320px; margin-top: 3rem; }
-      .dots-pattern { display: none; }
-      .timeline::before { left: 10px; }
-      .timeline-item { padding-left: 40px; }
-      .timeline-dot { left: 2px; }
+      .hero-photo-bg {
+        width: 280px;
+        height: 320px;
+        margin-top: 3rem;
+      }
+
+      .dots-pattern {
+        display: none;
+      }
+
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-item {
+        padding-left: 40px;
+      }
+
+      .timeline-dot {
+        left: 2px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ══════════ NAVBAR ══════════ -->
   <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#home">N. Hasanov</a>
+      <a class="navbar-brand" href="#home">Novruz H.</a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -526,11 +603,31 @@
           <div class="hero-photo-wrap">
             <!-- Dot decorations -->
             <div class="dots-pattern top-right">
-              <div class="dot" style="opacity:.6"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-              <div class="dot"></div><div class="dot" style="opacity:.6"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-              <div class="dot"></div><div class="dot"></div><div class="dot" style="opacity:.6"></div><div class="dot"></div><div class="dot"></div>
-              <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot" style="opacity:.6"></div><div class="dot"></div>
-              <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot" style="opacity:.6"></div>
+              <div class="dot" style="opacity:.6"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot" style="opacity:.6"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot" style="opacity:.6"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot" style="opacity:.6"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot" style="opacity:.6"></div>
             </div>
 
             <div class="hero-photo-bg">
@@ -538,11 +635,31 @@
             </div>
 
             <div class="dots-pattern bottom-left">
-              <div class="dot" style="opacity:.6"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-              <div class="dot"></div><div class="dot" style="opacity:.6"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-              <div class="dot"></div><div class="dot"></div><div class="dot" style="opacity:.6"></div><div class="dot"></div><div class="dot"></div>
-              <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot" style="opacity:.6"></div><div class="dot"></div>
-              <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot" style="opacity:.6"></div>
+              <div class="dot" style="opacity:.6"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot" style="opacity:.6"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot" style="opacity:.6"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot" style="opacity:.6"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot" style="opacity:.6"></div>
             </div>
           </div>
         </div>
@@ -566,13 +683,18 @@
             <div class="row align-items-center g-4">
               <div class="col-md-8">
                 <p class="lead mb-3" style="color: var(--dark); font-weight:500;">
-                  I'm a Senior Data Analyst and Business Intelligence expert passionate about transforming raw data into strategic insights that drive real business outcomes.
+                  I'm a Senior Data Analyst and Business Intelligence expert passionate about transforming raw data into
+                  strategic insights that drive real business outcomes.
                 </p>
                 <p style="color: var(--text-muted); line-height: 1.8;">
-                  With over a decade of experience across telecom, logistics, retail, and conglomerates, I specialize in data engineering, predictive modelling, executive dashboarding, and cross-functional stakeholder collaboration. I hold an MBA from ADA University / Maastricht School of Management and a BA in Business Administration from ADA University, Baku.
+                  With over a decade of experience across telecom, logistics, retail, and conglomerates, I specialize in
+                  data engineering, predictive modelling, executive dashboarding, and cross-functional stakeholder
+                  collaboration. I hold an MBA from ADA University / Maastricht School of Management and a BA in
+                  Business Administration from ADA University, Baku.
                 </p>
                 <p style="color: var(--text-muted); line-height: 1.8;">
-                  Outside of work, I'm passionate about oratory, partisan marketing, and CSR initiatives, and I was a proud member of the national dance troupe "Azeri Incileri" (2008–2010).
+                  Outside of work, I'm passionate about oratory, partisan marketing, and CSR initiatives, and I was a
+                  proud member of the national dance troupe "Azeri Incileri" (2008–2010).
                 </p>
                 <div class="mt-3">
                   <a href="https://linkedin.com/in/novruzhasanov" target="_blank" class="social-icon" title="LinkedIn">
@@ -791,13 +913,18 @@
         <div class="col-md-5">
           <div class="edu-card">
             <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-            <div style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--primary);">Master of Arts</div>
+            <div
+              style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--primary);">
+              Master of Arts</div>
             <h4 style="color:var(--dark); font-weight:700; margin:.4rem 0 .2rem;">Business Administration</h4>
-            <div style="color:var(--text-muted); font-size:.9rem; font-weight:500;">ADA University / Maastricht School of Management</div>
-            <div style="color:var(--text-muted); font-size:.85rem; margin-top:.5rem;">Sep 2018 – May 2020 · Baku, Azerbaijan</div>
+            <div style="color:var(--text-muted); font-size:.9rem; font-weight:500;">ADA University / Maastricht School
+              of Management</div>
+            <div style="color:var(--text-muted); font-size:.85rem; margin-top:.5rem;">Sep 2018 – May 2020 · Baku,
+              Azerbaijan</div>
             <hr style="border-color:rgba(45,45,45,.1); margin:1rem 0;">
             <p style="font-size:.85rem; color:var(--text-muted); margin:0;">
-              <strong style="color:var(--dark);">Key courses:</strong> Advanced Business Intelligence &amp; Analytics, Decision Making Tools, Global Corporate Strategy, Digital Marketing, Product &amp; Portfolio Management
+              <strong style="color:var(--dark);">Key courses:</strong> Advanced Business Intelligence &amp; Analytics,
+              Decision Making Tools, Global Corporate Strategy, Digital Marketing, Product &amp; Portfolio Management
             </p>
           </div>
         </div>
@@ -805,13 +932,17 @@
         <div class="col-md-5">
           <div class="edu-card">
             <div class="edu-icon"><i class="fas fa-university"></i></div>
-            <div style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--primary);">Bachelor of Arts</div>
+            <div
+              style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--primary);">
+              Bachelor of Arts</div>
             <h4 style="color:var(--dark); font-weight:700; margin:.4rem 0 .2rem;">Business Administration</h4>
             <div style="color:var(--text-muted); font-size:.9rem; font-weight:500;">ADA University</div>
-            <div style="color:var(--text-muted); font-size:.85rem; margin-top:.5rem;">Sep 2012 – May 2016 · Baku, Azerbaijan</div>
+            <div style="color:var(--text-muted); font-size:.85rem; margin-top:.5rem;">Sep 2012 – May 2016 · Baku,
+              Azerbaijan</div>
             <hr style="border-color:rgba(45,45,45,.1); margin:1rem 0;">
             <p style="font-size:.85rem; color:var(--text-muted); margin:0;">
-              <strong style="color:var(--dark);">Key courses:</strong> Business Intelligence &amp; Analytics, Business Statistics, Managerial Economics, Corporate Finance, Principles of Marketing
+              <strong style="color:var(--dark);">Key courses:</strong> Business Intelligence &amp; Analytics, Business
+              Statistics, Managerial Economics, Corporate Finance, Principles of Marketing
             </p>
           </div>
         </div>
@@ -874,19 +1005,27 @@
 
               <div class="lang-bar-wrap">
                 <div class="lang-label"><span>Azerbaijani</span><span style="color:var(--primary)">Native</span></div>
-                <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+                <div class="lang-bar">
+                  <div class="lang-bar-fill" style="width:100%"></div>
+                </div>
               </div>
               <div class="lang-bar-wrap">
                 <div class="lang-label"><span>Russian</span><span style="color:var(--primary)">Fluent</span></div>
-                <div class="lang-bar"><div class="lang-bar-fill" style="width:90%"></div></div>
+                <div class="lang-bar">
+                  <div class="lang-bar-fill" style="width:90%"></div>
+                </div>
               </div>
               <div class="lang-bar-wrap">
                 <div class="lang-label"><span>English</span><span style="color:var(--primary)">Fluent</span></div>
-                <div class="lang-bar"><div class="lang-bar-fill" style="width:88%"></div></div>
+                <div class="lang-bar">
+                  <div class="lang-bar-fill" style="width:88%"></div>
+                </div>
               </div>
               <div class="lang-bar-wrap">
                 <div class="lang-label"><span>Turkish</span><span style="color:var(--primary)">Limited</span></div>
-                <div class="lang-bar"><div class="lang-bar-fill" style="width:40%"></div></div>
+                <div class="lang-bar">
+                  <div class="lang-bar-fill" style="width:40%"></div>
+                </div>
               </div>
             </div>
 
@@ -982,4 +1121,5 @@
   </script>
 
 </body>
+
 </html>
